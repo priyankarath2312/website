@@ -1,0 +1,660 @@
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #fff0f5;
+    color: #333;
+}
+
+
+/* =========================================
+   MAIN HOME PAGE
+========================================= */
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 70px 25px;
+    text-align: center;
+}
+
+.container > h1 {
+    font-size: 55px;
+    margin: 0;
+    color: #d94f70;
+}
+
+.intro {
+    font-size: 21px;
+    color: #777;
+    margin: 15px 0 40px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   LOVE TIMER
+========================================= */
+
+.love-timer {
+    background: rgba(255, 255, 255, 0.95);
+
+    padding: 35px 25px;
+
+    margin: 30px auto 65px;
+
+    max-width: 700px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.10);
+
+    border: 1px solid #ffe0e8;
+}
+
+.love-timer h2 {
+    margin: 0 0 15px;
+
+    color: #d94f70;
+
+    font-size: 27px;
+}
+
+#timer {
+    font-size: 27px;
+
+    font-weight: bold;
+
+    line-height: 1.8;
+
+    color: #444;
+}
+
+.love-timer p {
+    margin-bottom: 0;
+
+    color: #999;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.timeline {
+    position: relative;
+
+    padding: 20px 0;
+}
+
+
+/* Vertical line */
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+
+    background: #e8a0b5;
+
+    top: 0;
+
+    bottom: 0;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   MEMORY LINKS
+========================================= */
+
+.memory-link {
+    display: block;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   MEMORY CARDS
+========================================= */
+
+.memory {
+    background: white;
+
+    padding: 35px 25px;
+
+    margin: 55px auto;
+
+    max-width: 700px;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.10);
+
+    border: 1px solid #ffe0e8;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    cursor: pointer;
+}
+
+
+/* Hover effect */
+
+.memory:hover {
+    transform: scale(1.04);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.16);
+}
+
+.heart {
+    font-size: 42px;
+
+    margin-bottom: 8px;
+}
+
+.memory h2 {
+    margin: 8px 0;
+
+    font-size: 29px;
+
+    color: #444;
+}
+
+.memory p {
+    margin: 10px 0 0;
+
+    font-size: 17px;
+
+    color: #888;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   HOME PAGE ENDING
+========================================= */
+
+.home-ending {
+    margin-top: 80px;
+
+    padding: 40px 20px;
+
+    font-size: 21px;
+
+    color: #777;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   STORY PAGES
+========================================= */
+
+.story-page {
+    min-height: 100vh;
+
+    padding: 70px 20px;
+
+    text-align: center;
+}
+
+.story-card {
+    max-width: 850px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 55px 45px;
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.12);
+
+    border: 1px solid #ffe0e8;
+}
+
+.big-heart {
+    font-size: 75px;
+
+    margin-bottom: 10px;
+}
+
+.story-card h1 {
+    font-size: 48px;
+
+    color: #d94f70;
+
+    margin: 10px 0 40px;
+}
+
+.story {
+    max-width: 680px;
+
+    margin: auto;
+}
+
+.story p {
+    font-size: 20px;
+
+    line-height: 1.9;
+
+    margin: 28px 0;
+
+    color: #555;
+}
+
+.story h2 {
+    color: #d94f70;
+
+    font-size: 32px;
+
+    margin: 45px 0;
+}
+
+.story strong {
+    color: #d94f70;
+}
+
+.ending {
+    font-size: 23px !important;
+
+    font-weight: bold;
+
+    color: #d94f70 !important;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-button {
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: #d94f70;
+
+    color: white;
+
+    padding: 15px 28px;
+
+    border-radius: 30px;
+
+    margin-top: 35px;
+
+    font-size: 16px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.back-button:hover {
+    transform: scale(1.06);
+
+    background: #c43e60;
+}
+
+
+/* =========================================
+   PHOTO PAGE
+========================================= */
+
+.photo-intro {
+    font-size: 21px;
+
+    color: #777;
+
+    margin-bottom: 50px;
+}
+
+.memory-tree {
+    max-width: 1100px;
+
+    min-height: 850px;
+
+    margin: auto;
+
+    position: relative;
+}
+
+
+/* Tree */
+
+.tree-trunk {
+    position: absolute;
+
+    font-size: 420px;
+
+    left: 50%;
+
+    top: 180px;
+
+    transform: translateX(-50%);
+
+    z-index: 0;
+}
+
+
+/* Photo frames */
+
+.photo {
+    position: absolute;
+
+    width: 160px;
+
+    height: 190px;
+
+    background: white;
+
+    padding: 10px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.20);
+
+    transition:
+        transform 0.3s ease;
+
+    z-index: 2;
+}
+
+.photo img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.photo:hover {
+    transform:
+        scale(1.15)
+        rotate(0deg);
+
+    z-index: 10;
+}
+
+
+/* Photo positions */
+
+.photo1 {
+    top: 70px;
+    left: 8%;
+    transform: rotate(-8deg);
+}
+
+.photo2 {
+    top: 60px;
+    right: 8%;
+    transform: rotate(8deg);
+}
+
+.photo3 {
+    top: 230px;
+    left: 3%;
+    transform: rotate(5deg);
+}
+
+.photo4 {
+    top: 220px;
+    right: 3%;
+    transform: rotate(-6deg);
+}
+
+.photo5 {
+    top: 390px;
+    left: 12%;
+    transform: rotate(-7deg);
+}
+
+.photo6 {
+    top: 380px;
+    right: 12%;
+    transform: rotate(7deg);
+}
+
+.photo7 {
+    top: 540px;
+    left: 5%;
+    transform: rotate(5deg);
+}
+
+.photo8 {
+    top: 530px;
+    right: 5%;
+    transform: rotate(-5deg);
+}
+
+.photo9 {
+    top: 660px;
+    left: 18%;
+    transform: rotate(-8deg);
+}
+
+.photo10 {
+    top: 650px;
+    right: 18%;
+    transform: rotate(8deg);
+}
+
+.photo11 {
+    top: 360px;
+    left: 40%;
+    transform: rotate(-4deg);
+}
+
+.photo12 {
+    top: 540px;
+    right: 40%;
+    transform: rotate(5deg);
+}
+
+
+/* =========================================
+   TODAY PAGE
+========================================= */
+
+.today-page {
+    background: #fff0f5;
+}
+
+.final-message {
+    font-size: 23px !important;
+
+    font-style: italic;
+
+    color: #777 !important;
+}
+
+.today-page .story-card h1:last-child {
+    color: #d94f70;
+}
+
+
+/* =========================================
+   ❤️ FLOATING HEART RAIN
+========================================= */
+
+#heart-rain {
+    position: fixed;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 9999;
+}
+
+
+.floating-heart {
+    position: absolute;
+
+    bottom: -50px;
+
+    user-select: none;
+
+    pointer-events: none;
+
+    animation-name: heartFloat;
+
+    animation-timing-function: linear;
+
+    animation-fill-mode: forwards;
+
+    opacity: 0;
+}
+
+
+@keyframes heartFloat {
+
+    0% {
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+
+    10% {
+        opacity: 0.9;
+    }
+
+
+    50% {
+        transform:
+            translateY(-50vh)
+            translateX(var(--move))
+            rotate(15deg);
+
+        opacity: 1;
+    }
+
+
+    100% {
+        transform:
+            translateY(-115vh)
+            translateX(calc(var(--move) * -1))
+            rotate(-20deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 700px) {
+
+    .container {
+        padding: 45px 15px;
+    }
+
+    .container > h1 {
+        font-size: 40px;
+    }
+
+    .intro {
+        font-size: 18px;
+    }
+
+    .love-timer {
+        padding: 25px 15px;
+    }
+
+    .love-timer h2 {
+        font-size: 22px;
+    }
+
+    #timer {
+        font-size: 20px;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .memory {
+        margin-left: 35px;
+        margin-right: 5px;
+        padding: 28px 18px;
+    }
+
+    .memory h2 {
+        font-size: 24px;
+    }
+
+    .story-page {
+        padding: 35px 15px;
+    }
+
+    .story-card {
+        padding: 35px 20px;
+    }
+
+    .story-card h1 {
+        font-size: 35px;
+    }
+
+    .story p {
+        font-size: 18px;
+    }
+
+    .memory-tree {
+        min-height: 1100px;
+    }
+
+    .photo {
+        width: 115px;
+        height: 145px;
+    }
+
+}

@@ -1,0 +1,474 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Memory Tree ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+
+
+    <style>
+
+        /* ==============================
+           OUR MEMORY TREE
+           ============================== */
+
+        .memory-tree-page {
+            min-height: 100vh;
+            padding: 30px 20px 80px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .tree-title {
+            font-size: 42px;
+            margin-bottom: 8px;
+        }
+
+        .tree-subtitle {
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            opacity: 0.85;
+        }
+
+        .memory-tree {
+            position: relative;
+            width: min(1100px, 100%);
+            height: 900px;
+            margin: 0 auto;
+        }
+
+        /* Tree trunk */
+
+        .trunk {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 55px;
+            height: 620px;
+            border-radius: 30px;
+
+            background: linear-gradient(
+                to right,
+                #5c3520,
+                #8b5a3c,
+                #5c3520
+            );
+        }
+
+        /* Main branches */
+
+        .branch {
+            position: absolute;
+            height: 22px;
+            border-radius: 20px;
+            background: #70452c;
+            transform-origin: left center;
+        }
+
+        .branch.left-top {
+            width: 330px;
+            left: 50%;
+            top: 230px;
+            transform: rotate(155deg);
+        }
+
+        .branch.right-top {
+            width: 330px;
+            left: 50%;
+            top: 230px;
+            transform: rotate(25deg);
+        }
+
+        .branch.left-middle {
+            width: 300px;
+            left: 50%;
+            top: 360px;
+            transform: rotate(170deg);
+        }
+
+        .branch.right-middle {
+            width: 300px;
+            left: 50%;
+            top: 360px;
+            transform: rotate(10deg);
+        }
+
+        .branch.left-bottom {
+            width: 240px;
+            left: 50%;
+            top: 480px;
+            transform: rotate(190deg);
+        }
+
+        .branch.right-bottom {
+            width: 240px;
+            left: 50%;
+            top: 480px;
+            transform: rotate(-10deg);
+        }
+
+        /* Photos */
+
+        .memory-photo {
+            position: absolute;
+            width: 145px;
+            height: 145px;
+            padding: 7px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            object-fit: cover;
+            transition: transform 0.35s ease;
+            z-index: 5;
+        }
+
+        .memory-photo:hover {
+            transform: scale(1.12) rotate(0deg);
+            z-index: 20;
+        }
+
+        /* Photo positions */
+
+        .photo1 {
+            top: 70px;
+            left: 15%;
+            transform: rotate(-8deg);
+        }
+
+        .photo2 {
+            top: 70px;
+            right: 15%;
+            transform: rotate(8deg);
+        }
+
+        .photo3 {
+            top: 250px;
+            left: 5%;
+            transform: rotate(-10deg);
+        }
+
+        .photo4 {
+            top: 250px;
+            right: 5%;
+            transform: rotate(10deg);
+        }
+
+        .photo5 {
+            top: 430px;
+            left: 13%;
+            transform: rotate(7deg);
+        }
+
+        .photo6 {
+            top: 430px;
+            right: 13%;
+            transform: rotate(-7deg);
+        }
+
+        .photo7 {
+            top: 600px;
+            left: 25%;
+            transform: rotate(-8deg);
+        }
+
+        .photo8 {
+            top: 600px;
+            right: 25%;
+            transform: rotate(8deg);
+        }
+
+        .photo9 {
+            top: 150px;
+            left: 40%;
+            transform: rotate(-5deg);
+        }
+
+        .photo10 {
+            top: 500px;
+            left: 42%;
+            transform: rotate(5deg);
+        }
+
+        /* Floating hearts */
+
+        .heart-decoration {
+            position: absolute;
+            font-size: 30px;
+            animation: floatHeart 3s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        .heart1 {
+            top: 100px;
+            left: 38%;
+        }
+
+        .heart2 {
+            top: 330px;
+            right: 35%;
+        }
+
+        .heart3 {
+            top: 540px;
+            left: 36%;
+        }
+
+        @keyframes floatHeart {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+        }
+
+        .tree-message {
+            max-width: 750px;
+            margin: 30px auto 0;
+            font-size: 19px;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            .tree-title {
+                font-size: 32px;
+            }
+
+            .memory-tree {
+                height: 1250px;
+            }
+
+            .trunk {
+                height: 850px;
+            }
+
+            .branch {
+                opacity: 0.8;
+            }
+
+            .memory-photo {
+                width: 115px;
+                height: 115px;
+            }
+
+            .photo1 {
+                top: 80px;
+                left: 5%;
+            }
+
+            .photo2 {
+                top: 80px;
+                right: 5%;
+            }
+
+            .photo3 {
+                top: 300px;
+                left: 2%;
+            }
+
+            .photo4 {
+                top: 300px;
+                right: 2%;
+            }
+
+            .photo5 {
+                top: 520px;
+                left: 5%;
+            }
+
+            .photo6 {
+                top: 520px;
+                right: 5%;
+            }
+
+            .photo7 {
+                top: 740px;
+                left: 5%;
+            }
+
+            .photo8 {
+                top: 740px;
+                right: 5%;
+            }
+
+            .photo9 {
+                top: 190px;
+                left: 34%;
+            }
+
+            .photo10 {
+                top: 630px;
+                left: 34%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- 🎵 OUR SONG -->
+
+    <audio id="bgMusic" preload="auto">
+        <source src="assets/music/our_song.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <div class="memory-tree-page">
+
+        <a href="index.html" class="back-btn">
+            ← Back to Our Story
+        </a>
+
+
+        <h1 class="tree-title">
+            🌳 Our Memory Tree ❤️
+        </h1>
+
+
+        <p class="tree-subtitle">
+            We have clicked countless photos together over the years... 📸❤️
+            These are just a few of the moments that are especially close to my heart. 🥹💕
+        </p>
+
+
+        <div class="memory-tree">
+
+            <!-- TREE TRUNK -->
+
+            <div class="trunk"></div>
+
+
+            <!-- BRANCHES -->
+
+            <div class="branch left-top"></div>
+            <div class="branch right-top"></div>
+
+            <div class="branch left-middle"></div>
+            <div class="branch right-middle"></div>
+
+            <div class="branch left-bottom"></div>
+            <div class="branch right-bottom"></div>
+
+
+            <!-- OUR 10 MEMORABLE PHOTOS -->
+
+            <img
+                src="assets/photos/photo1.jpeg"
+                class="memory-photo photo1"
+                alt="A memorable moment of us"
+            >
+
+            <img
+                src="assets/photos/photo2.jpeg"
+                class="memory-photo photo2"
+                alt="A memorable moment of us"
+            >
+
+            <img
+                src="assets/photos/photo3.jpeg"
+                class="memory-photo photo3"
+                alt="A memorable moment of us"
+            >
+
+            <img
+                src="assets/photos/photo4.jpeg"
+                class="memory-photo photo4"
+                alt="A memorable moment of us"
+            >
+
+            <img
+                src="assets/photos/photo5.jpeg"
+                class="memory-photo photo5"
+                alt="A memorable moment of us"
+            >
+
+            <img
+                src="assets/photos/photo6.jpeg"
+                class="memory-photo photo6"
+                alt="A memorable moment of us"
+            >
+
+            <img
+                src="assets/photos/photo7.jpeg"
+                class="memory-photo photo7"
+                alt="A memorable moment of us"
+            >
+
+            <img
+                src="assets/photos/photo8.jpeg"
+                class="memory-photo photo8"
+                alt="A memorable moment of us"
+            >
+
+            <img
+                src="assets/photos/photo9.jpeg"
+                class="memory-photo photo9"
+                alt="A memorable moment of us"
+            >
+
+            <img
+                src="assets/photos/photo10.jpeg"
+                class="memory-photo photo10"
+                alt="A memorable moment of us"
+            >
+
+
+            <!-- FLOATING HEARTS -->
+
+            <div class="heart-decoration heart1">
+                ❤️
+            </div>
+
+            <div class="heart-decoration heart2">
+                💕
+            </div>
+
+            <div class="heart-decoration heart3">
+                ❤️
+            </div>
+
+        </div>
+
+
+        <p class="tree-message">
+
+            These aren't all our photos — just a few little memories I chose to keep here. ❤️
+
+            Because behind every picture is a story, a feeling, and a moment that belongs to us. 🫶🏻✨
+
+        </p>
+
+    </div>
+
+
+    <!-- 🎵 COMMON MUSIC SCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```

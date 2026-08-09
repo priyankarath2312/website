@@ -1,0 +1,758 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Love Story ❤️</title>
+
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background: linear-gradient(
+                135deg,
+                #fff0f5,
+                #ffe4ec,
+                #fff5f8
+            );
+            color: #5a2636;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        .heart {
+            position: fixed;
+            bottom: -40px;
+            font-size: 20px;
+            animation: floatHeart 8s linear infinite;
+            opacity: 0.7;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes floatHeart {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+
+        /* =========================
+           HEART
+        ========================= */
+
+        .main-heart {
+            font-size: 70px;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+
+        /* =========================
+           TITLE
+        ========================= */
+
+        h1 {
+            font-size: 48px;
+            color: #b8325e;
+            margin: 15px 0;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: #713247;
+        }
+
+
+        /* =========================
+           LOVE COUNTER
+        ========================= */
+
+        .counter-box {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow:
+                0 10px 30px rgba(180, 60, 100, 0.15);
+            margin-bottom: 40px;
+        }
+
+        .counter-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #a52c55;
+        }
+
+        #loveCounter {
+            font-size: 25px;
+            font-weight: bold;
+            color: #8f2147;
+            line-height: 2;
+        }
+
+
+        /* =========================
+           STORY
+        ========================= */
+
+        .story {
+            background: rgba(255, 255, 255, 0.78);
+            border-radius: 25px;
+            padding: 35px;
+            margin-bottom: 40px;
+
+            box-shadow:
+                0 10px 30px rgba(180, 60, 100, 0.12);
+        }
+
+        .story h2 {
+            color: #b8325e;
+            margin-bottom: 15px;
+            font-size: 30px;
+        }
+
+        .story p {
+            font-size: 18px;
+            line-height: 1.9;
+        }
+
+
+        /* =========================
+           NAVIGATION BUTTONS
+        ========================= */
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d94f7c,
+                    #b8325e
+                );
+
+            padding: 14px 22px;
+
+            border-radius: 30px;
+
+            font-size: 16px;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 5px 15px rgba(184, 50, 94, 0.25);
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 8px 20px rgba(184, 50, 94, 0.35);
+        }
+
+
+        /* =========================
+           MUSIC BUTTON
+        ========================= */
+
+        #musicBtn {
+
+            position: fixed;
+
+            right: 20px;
+            bottom: 20px;
+
+            z-index: 9999;
+
+            border: none;
+
+            border-radius: 50px;
+
+            padding: 15px 22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d94f7c,
+                    #a91f50
+                );
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 6px 20px rgba(150, 30, 75, 0.35);
+
+            transition: 0.3s;
+        }
+
+        #musicBtn:hover {
+
+            transform: scale(1.05);
+
+            box-shadow:
+                0 8px 25px rgba(150, 30, 75, 0.45);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            margin-top: 50px;
+
+            font-size: 16px;
+
+            color: #8a4057;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 35px;
+            }
+
+            .subtitle {
+                font-size: 17px;
+            }
+
+            .story {
+                padding: 25px 20px;
+            }
+
+            .story p {
+                font-size: 16px;
+            }
+
+            #loveCounter {
+                font-size: 19px;
+            }
+
+            #musicBtn {
+
+                right: 12px;
+                bottom: 12px;
+
+                padding: 13px 18px;
+
+                font-size: 14px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ==================================
+         BACKGROUND MUSIC
+    =================================== -->
+
+    <audio id="bgMusic" loop>
+
+        <source
+            src="assets/music/our_song.mp3"
+            type="audio/mpeg"
+        >
+
+        Your browser does not support audio.
+
+    </audio>
+
+
+    <!-- ==================================
+         FLOATING HEARTS
+    =================================== -->
+
+    <div
+        class="heart"
+        style="left: 10%; animation-delay: 0s;"
+    >
+        ❤️
+    </div>
+
+    <div
+        class="heart"
+        style="left: 25%; animation-delay: 2s;"
+    >
+        💕
+    </div>
+
+    <div
+        class="heart"
+        style="left: 45%; animation-delay: 4s;"
+    >
+        💗
+    </div>
+
+    <div
+        class="heart"
+        style="left: 65%; animation-delay: 1s;"
+    >
+        💖
+    </div>
+
+    <div
+        class="heart"
+        style="left: 85%; animation-delay: 3s;"
+    >
+        ❤️
+    </div>
+
+
+    <!-- ==================================
+         MAIN CONTENT
+    =================================== -->
+
+    <div class="container">
+
+
+        <div class="main-heart">
+            ❤️
+        </div>
+
+
+        <h1>
+            Our Love Story
+        </h1>
+
+
+        <p class="subtitle">
+
+            From December 12, 2019 to forever... ❤️
+
+            <br>
+
+            This is the story of us.
+
+        </p>
+
+
+        <!-- ==================================
+             LOVE COUNTER
+        =================================== -->
+
+        <div class="counter-box">
+
+            <div class="counter-title">
+
+                ⏳ We have been together for...
+
+            </div>
+
+
+            <div id="loveCounter">
+
+                Loading our time together... ❤️
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================
+             OUR STORY
+        =================================== -->
+
+        <div class="story">
+
+            <h2>
+                Our Story Begins ❤️
+            </h2>
+
+
+            <p>
+
+                December 12, 2019.
+
+                <br><br>
+
+                A date that changed my life forever.
+
+                <br><br>
+
+                What started as something small slowly became
+                one of the most beautiful parts of my life.
+
+                We have had beautiful moments, difficult moments,
+                misunderstandings, fights and countless memories.
+
+                <br><br>
+
+                There were times when we thought we couldn't
+                understand each other.
+
+                There were times when I blocked you and didn't
+                message you.
+
+                <br><br>
+
+                But somehow, you always came back.
+
+                You always found a way to impress me,
+                make me smile and remind me why I fell in love
+                with you in the first place.
+
+                <br><br>
+
+                And after everything we've been through,
+                we are still here.
+
+                Still choosing each other.
+
+                Still loving each other.
+
+                ❤️
+
+            </p>
+
+        </div>
+
+
+        <!-- ==================================
+             PAGE BUTTONS
+        =================================== -->
+
+        <div class="buttons">
+
+
+            <a
+                href="first-meeting.html"
+                class="btn"
+            >
+                💕 First Meeting
+            </a>
+
+
+            <a
+                href="first-date.html"
+                class="btn"
+            >
+                🌹 Our First Date
+            </a>
+
+
+            <a
+                href="photos.html"
+                class="btn"
+            >
+                📸 Our Photos
+            </a>
+
+
+            <a
+                href="trips.html"
+                class="btn"
+            >
+                ✈️ Our Trips
+            </a>
+
+
+            <a
+                href="memories.html"
+                class="btn"
+            >
+                💭 Our Memories
+            </a>
+
+
+            <a
+                href="today.html"
+                class="btn"
+            >
+                ❤️ Today & Forever
+            </a>
+
+
+        </div>
+
+
+        <!-- ==================================
+             FOOTER
+        =================================== -->
+
+        <footer>
+
+            Made with all my love ❤️
+
+            <br>
+
+            For the person who means everything to me.
+
+        </footer>
+
+
+    </div>
+
+
+    <!-- ==================================
+         MUSIC BUTTON
+    =================================== -->
+
+    <button
+        id="musicBtn"
+        onclick="toggleMusic()"
+    >
+        🎵 Play Our Song ❤️
+    </button>
+
+
+    <!-- ==================================
+         JAVASCRIPT
+    =================================== -->
+
+    <script>
+
+
+        /* =================================
+           LOVE COUNTER
+        ================================= */
+
+        const startDate =
+            new Date("2019-12-12T00:00:00");
+
+
+        function updateCounter() {
+
+            const now = new Date();
+
+
+            const difference =
+                now - startDate;
+
+
+            const seconds =
+                Math.floor(
+                    difference / 1000
+                );
+
+
+            const days =
+                Math.floor(
+                    seconds / 86400
+                );
+
+
+            const years =
+                Math.floor(
+                    days / 365.2425
+                );
+
+
+            const remainingDays =
+                Math.floor(
+                    days -
+                    (years * 365.2425)
+                );
+
+
+            const hours =
+                Math.floor(
+                    (seconds % 86400) / 3600
+                );
+
+
+            const minutes =
+                Math.floor(
+                    (seconds % 3600) / 60
+                );
+
+
+            const secs =
+                seconds % 60;
+
+
+            document.getElementById(
+                "loveCounter"
+            ).innerHTML =
+
+                `${years} Years ❤️
+                ${remainingDays} Days
+
+                <br>
+
+                ${hours} Hours 💕
+                ${minutes} Minutes 💗
+                ${secs} Seconds`;
+
+        }
+
+
+        updateCounter();
+
+
+        setInterval(
+            updateCounter,
+            1000
+        );
+
+
+        /* =================================
+           MUSIC
+        ================================= */
+
+        const music =
+            document.getElementById(
+                "bgMusic"
+            );
+
+
+        const musicBtn =
+            document.getElementById(
+                "musicBtn"
+            );
+
+
+        let isPlaying = false;
+
+
+        /* Try autoplay */
+
+        window.addEventListener(
+            "load",
+            function () {
+
+                music.volume = 0.7;
+
+
+                music.play()
+
+                    .then(function () {
+
+                        isPlaying = true;
+
+                        musicBtn.innerHTML =
+                            "🎵 Our Song is Playing ❤️";
+
+                    })
+
+                    .catch(function () {
+
+                        /*
+                         Browser blocked autoplay.
+                         User can press the button.
+                        */
+
+                        isPlaying = false;
+
+                        musicBtn.innerHTML =
+                            "🎵 Play Our Song ❤️";
+
+                    });
+
+            }
+        );
+
+
+        /* Play / Pause */
+
+        function toggleMusic() {
+
+            if (music.paused) {
+
+                music.play();
+
+                isPlaying = true;
+
+                musicBtn.innerHTML =
+                    "⏸️ Pause Our Song";
+
+            }
+
+            else {
+
+                music.pause();
+
+                isPlaying = false;
+
+                musicBtn.innerHTML =
+                    "🎵 Play Our Song ❤️";
+
+            }
+
+        }
+
+
+    </script>
+
+
+</body>
+</html>
+```
