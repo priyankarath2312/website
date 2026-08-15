@@ -1,6 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* ==========================================
+       ❤️ DAYS WE HAVE BEEN TOGETHER
+       START DATE: DECEMBER 12, 2019
+       ========================================== */
+
+    const startDate = new Date(2019, 11, 12);
+    const today = new Date();
+
+    // Ignore the time and compare only the dates
+    startDate.setHours(0, 0, 0, 0);
+    today.setHours(0, 0, 0, 0);
+
+    const difference = today - startDate;
+
+    const daysTogether =
+        Math.floor(difference / (1000 * 60 * 60 * 24));
+
+    const daysElement =
+        document.getElementById("days-together");
+
+    if (daysElement) {
+        daysElement.textContent =
+            daysTogether.toLocaleString();
+    }
+
+
+    /* ==========================================
        🎵 7-PAGE MUSIC SYSTEM
        SONG LENGTH: 4 MINUTES 36 SECONDS
        ========================================== */
@@ -11,54 +37,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const pageMusic = {
 
-            // PAGE 1 — OUR LOVE STORY
             "index.html": {
                 start: 0,
                 end: 39
             },
 
-            // PAGE 2 — FIRST MEETING
             "first-meeting.html": {
                 start: 39,
                 end: 79
             },
 
-            // PAGE 3 — OUR FIRST DATE
             "first-date.html": {
                 start: 79,
                 end: 118
             },
 
-            // PAGE 4 — PHOTOS
             "photos.html": {
                 start: 118,
                 end: 157
             },
 
-            // PAGE 5 — TRIPS
             "trips.html": {
                 start: 157,
                 end: 197
             },
 
-            // PAGE 6 — OUR MEMORIES
             "memories.html": {
                 start: 197,
                 end: 236
             },
 
-            // PAGE 7 — TODAY & FOREVER
             "today.html": {
                 start: 236,
                 end: 276
             }
 
         };
-
-
-        /* ==========================================
-           FIND CURRENT PAGE
-           ========================================== */
 
         let page = window.location.pathname
             .split("/")
@@ -69,26 +83,13 @@ document.addEventListener("DOMContentLoaded", () => {
             page = "index.html";
         }
 
-
         const section = pageMusic[page];
-
 
         if (section) {
 
-            /* ==========================================
-               SET MUSIC POSITION
-               ========================================== */
-
             function setPosition() {
-
                 music.currentTime = section.start;
-
             }
-
-
-            /* ==========================================
-               START MUSIC
-               ========================================== */
 
             function startMusic() {
 
@@ -104,11 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-
-            /* ==========================================
-               WAIT FOR AUDIO
-               ========================================== */
-
             if (music.readyState >= 1) {
 
                 startMusic();
@@ -122,11 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
             }
-
-
-            /* ==========================================
-               START AFTER FIRST CLICK
-               ========================================== */
 
             function userInteraction() {
 
@@ -147,17 +138,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-
             document.addEventListener(
                 "click",
                 userInteraction,
                 { once: true }
             );
-
-
-            /* ==========================================
-               STOP AT END OF PAGE'S MUSIC SECTION
-               ========================================== */
 
             music.addEventListener(
                 "timeupdate",
@@ -175,7 +160,6 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
         }
-
 
     }
 
@@ -220,19 +204,13 @@ document.addEventListener("DOMContentLoaded", () => {
             ];
 
 
-        /* Random horizontal position */
-
         heart.style.left =
             Math.random() * 100 + "vw";
 
 
-        /* Random size */
-
         heart.style.fontSize =
             Math.random() * 18 + 15 + "px";
 
-
-        /* Random speed */
 
         const duration =
             Math.random() * 4 + 5;
@@ -240,8 +218,6 @@ document.addEventListener("DOMContentLoaded", () => {
         heart.style.animationDuration =
             duration + "s";
 
-
-        /* Random sideways movement */
 
         heart.style.setProperty(
             "--move",
@@ -252,8 +228,6 @@ document.addEventListener("DOMContentLoaded", () => {
         heartContainer.appendChild(heart);
 
 
-        /* Remove after animation */
-
         setTimeout(() => {
 
             heart.remove();
@@ -263,14 +237,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* ==========================================
-       ❤️ CREATE HEARTS CONTINUOUSLY
-       ========================================== */
-
     setInterval(
         createHeart,
         450
     );
 
 });
-  
+             
+    
